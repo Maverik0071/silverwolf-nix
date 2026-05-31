@@ -14,17 +14,17 @@
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+  #  driSupport = true;
+  #  driSupport32Bit = true;
   };
 
-  hardware.opengl.extraPackages = with pkgs; [
-  amdvlk
-  ];
+  #hardware.opengl.extraPackages = with pkgs; [
+  #amdvlk
+  #];
   # For 32 bit applications 
-  hardware.opengl.extraPackages32 = with pkgs; [
-  driversi686Linux.amdvlk
-  ];
+  #hardware.opengl.extraPackages32 = with pkgs; [
+  #driversi686Linux.amdvlk
+  #];
    
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["amdgpu"];
@@ -112,12 +112,12 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  #services.xserver.autorun = true;
+  services.xserver.autorun = true;
   #services.xserver.layout = "us";
   #services.xserver.desktopManager.default = "none";
   #services.xserver.desktopManager.xterm.enabe = false;
   #services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.windowManager.i3.enable = true;
+  #services.xserver.windowManager.i3.enable = true;
   #services.xserver.displayManager.sddm.enable = true;
   #services.xserver.displayManager.sddm.wayland.enable = true;
   # services.xserver.displayManager.sddm.theme = "breeze";
@@ -130,7 +130,7 @@
   services.dbus.packages = with pkgs; [ gnome2.GConf ];
   programs.dconf.enable = true;
   #environment.systemPackages = with pkgs; [ gnomeExtensions.appindicator ];
-  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+  #services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
   nixpkgs.config.allowAliases = false;
   services.sysprof.enable = true;
 
@@ -159,7 +159,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+ 
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -186,7 +186,7 @@
     packages = with pkgs; [
       firefox
       acsccid
-      lunarvim
+    #  lunarvim
       zsh
       gh
     #  thunderbird
@@ -239,9 +239,10 @@
     nixd
 
   # gnome software
-    gnome.gnome-software
-    gnome.gnome-packagekit
-    gnome.gnome-tweaks
+    bazaar
+    gnome-software
+    gnome-packagekit
+    gnome-tweaks
     gnomeExtensions.dock-reloaded
     qgnomeplatform-qt6
     qgnomeplatform
@@ -254,7 +255,7 @@
     wget
     curl
     pkgs.gh
-    pkgs.libsForQt5.ark
+    #pkgs.libsForQt5.ark
     git
     vim
     arandr
@@ -267,11 +268,11 @@
     cmake
     meson
     ninja
-    libsForQt5.full
-    libsForQt5.qt5.qtbase
-    qt6.full
+    #libsForQt5.full
+    #libsForQt5.qt5.qtbase
+    #qt6.full
     lm_sensors
-    xfce.xfce4-sensors-plugin
+    # xfce.xfce4-sensors-plugin
     xsensors
     qt6.qtbase
     fanctl
@@ -284,18 +285,18 @@
     rofi
     autotiling
     lxappearance
-    xfce.xfce4-terminal
-    xfce.xfce4-settings
+   # xfce.xfce4-terminal
+   # xfce.xfce4-settings
     dunst
     pavucontrol
     jgmenu
     nix-zsh-completions
     zsh
     tmux
-    fzf-zsh
+   # fzf-zsh
     nitrogen
     pfetch
-    neofetch
+   #  neofetch
     neovim
     picom
     networkmanager_dmenu
@@ -310,12 +311,12 @@
     hermit
     source-code-pro
     terminus_font
-    nerdfonts
-    terminus-nerdfont
+    # nerdfonts
+    nerd-fonts.terminess-ttf
     ranger
     i3status
     pkgs.pcscliteWithPolkit
-    pkgs.pcsctools
+    pkgs.pcsc-tools
     pkgs.scmccid
     pkgs.ccid
     pkgs.pcsclite
@@ -324,28 +325,29 @@
     nixos-icons
     material-icons
     material-design-icons
-    luna-icons
+    candy-icons
+    cosmic-icons
     variety
     sweet
 
    #vim and programming 
     vimPlugins.nvim-treesitter-textsubjects
     nixos-install-tools
-    nodejs_21
+    nodejs_24
     lua
     python3
-    clipit
+    # clipit
     rofi-power-menu
-    blueberry
+    # blueberry
 
    #misc
-    steam
-    pkgs.steamPackages.steam-runtime
+    #steam
+    #pkgs.steamPackages.steam-runtime
     sc-controller
     gamescope
     protonup-qt
     lutris
-    steamtinkerlaunch
+    #steamtinkerlaunch
     gh
     pasystray
     tlp
@@ -356,14 +358,13 @@
     w3m
     usbimager
     wezterm
-    xdragon
-    lunarvim
-    pcsctools
+    # lunarvim
+    pcsc-tools
     pcsclite
     pkgs.opensc
   # pkgs.ark
     pam_p11
-    pam_usb
+    #pam_usb
     nss
     nss_latest
     distrobox
@@ -473,7 +474,7 @@
   services.gnome.gnome-remote-desktop.enable = true;
   services.gnome.core-os-services.enable = true;
   services.gnome.gnome-online-accounts.enable = true;
-  programs.file-roller.enable = true;
+  # programs.file-roller.enable = true;
   qt.platformTheme = [
   "gnome"
   "gtk2"
