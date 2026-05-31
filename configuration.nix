@@ -244,9 +244,11 @@
     gnome-packagekit
     gnome-tweaks
     gnomeExtensions.dock-reloaded
+    gnomeExtensions.pop-shell
+    gnomeExtensions.extension-list
     qgnomeplatform-qt6
     qgnomeplatform
-  # xdg-desktop-portal-gnome
+    xdg-desktop-portal-gnome
     lomiri.gmenuharness
   # gnome-gnome-settings-daemon
 
